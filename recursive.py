@@ -28,6 +28,9 @@ def fibonacci_dynamic(n):
         return stored[n]
 
 if __name__ == 'main':
+
     print("Iterative :",fibonacci_iterative(3))
+    
     print("Recursive :",fibonacci_recursive(3))
+    
     print("Dynamic: ",fibonacci_dynamic(3))
