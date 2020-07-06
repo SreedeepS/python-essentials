@@ -21,7 +21,7 @@ print('Los Angeles time - ',d1, ', converted to Madrid timezone: ',d2_madrid)
 '''
 Use UTC to work with timestamps, with time not related to any location.
 UTC is Coordinated Universal Time and is a system that provides a universal way of coordinating
-time across locations. Most common standatd for the time. If you use any specific time zone, you 
+time across locations. Most common standard for the time. If you use any specific time zone, you 
 should be aware that nations might change the time at any point, which could make any of your calculations invalid.
 '''
 #Find out the difference in seconds between two important events
