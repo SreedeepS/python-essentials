@@ -51,7 +51,7 @@ print("stdout: \n", result.stdout)
 In some situations, you might want to inspect the return code that our return process has returned. 
 In those situations, you can just check the returncode attribute in the returning instance of subprocess.run
 0 - Success
-1 - Error
+Non zero - Not success
 '''
 result = subprocess.run(["ls", "not_available_file"])
 print("return code: ", result.returncode)
@@ -68,3 +68,14 @@ print("Return code: ", result.returncode)
 #Print environment variables
 result = subprocess.run(["env"], capture_output=True, text=True)
 print("Env details:",result.stdout)
+
+'''
+Run the code by calling subprocess.run and sys.executable to get the Python interpreter we are using.
+The code takes a code line, which compiles Python code that will crash and runs it in a subprocess by
+executing the same interpreter (retrieved via sys.executable) with the -c option to run Python code inline.
+'''
+
+import sys
+code = 'compile("1" + "+1" * 10 ** 6, "string", "exec")'
+result = subprocess.run([sys.executable, "-c", code])
+print(result.returncode)
